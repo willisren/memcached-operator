@@ -41,18 +41,16 @@ spec:
                   to remove/update
                 type: string
               size:
+                description: Size defines the number of Memcached instances
                 format: int32
                 type: integer
-            required:
-            - size
             type: object
           status:
             description: MemcachedStatus defines the observed state of Memcached
             properties:
               nodes:
-                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                  of cluster Important: Run "make" to regenerate code after modifying
-                  this file'
+                description: Nodes store the name of the pods which are running Memcached
+                  instances
                 items:
                   type: string
                 type: array

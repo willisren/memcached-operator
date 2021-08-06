@@ -28,15 +28,19 @@ type MemcachedSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
+	// Size defines the number of Memcached instances
+	Size int32 `json:"size,omitempty"`
+
 	// Foo is an example field of Memcached. Edit memcached_types.go to remove/update
-	Foo  string `json:"foo,omitempty"`
-	Size int32  `json:"size,omitempty"`
+	Foo string `json:"foo,omitempty"`
 }
 
 // MemcachedStatus defines the observed state of Memcached
 type MemcachedStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	// Nodes store the name of the pods which are running Memcached instances
 	Nodes []string `json:"nodes,omitempty"`
 }
 
